@@ -42,4 +42,4 @@ jobs:
           curl --fail http://localhost:8000/health
       - name: Tear down
         if: always()
-        run: docker compose down -v
+        run: docker compose -f docker/docker-compose.yml down -v

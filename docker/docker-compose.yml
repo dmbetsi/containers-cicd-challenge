@@ -21,7 +21,7 @@ services:
     environment:
       DATABASE_URL: postgres://{user}:{pw}@db:5432/{db}
       SECRET_KEY: ${SECRET_KEY}
-    env_file: .env
+    env_file: ../.env
 
 
 volumes:
