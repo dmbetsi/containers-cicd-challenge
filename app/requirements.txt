@@ -1,6 +1,6 @@
 fastapi==0.95.2
 uvicorn[standard]==0.22.0
-SQLAlchemy==1.4.55
+SQLAlchemy==1.4.54
 psycopg2-binary==2.9.6
 python-jose==3.3.0
 passlib[bcrypt]==1.7.4
