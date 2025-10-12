@@ -1,6 +1,6 @@
 name: CI
 pull_request:
-branches: [main]
+branches: [dev]
 
 
 jobs:
