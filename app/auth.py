@@ -8,7 +8,7 @@ ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 
-def hash_password(password: str):
+def get_password_hash(password: str):
     # bcrypt supports only up to 72 bytes
     return pwd_context.hash(password[:72])
 
