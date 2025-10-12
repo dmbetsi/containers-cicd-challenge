@@ -6,11 +6,15 @@ from fastapi.testclient import TestClient
 # Ensure tests use an in-memory sqlite database to avoid requiring Postgres for unit tests
 os.environ.setdefault("DATABASE_URL", "sqlite:///:memory:")
 from app.main import app
-
+from app.database import init_db
 
 client = TestClient(app)
 
-
+@pytest.fixture(scope="module", autouse=True)
+def setup_db():
+    """Initialize database tables before any tests run"""
+    init_db()
+    yield
 
 
 def test_signup_and_login():
