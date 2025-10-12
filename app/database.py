@@ -1,3 +1,5 @@
+import os
+
 from sqlalchemy.pool import StaticPool
 
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./test.db")
