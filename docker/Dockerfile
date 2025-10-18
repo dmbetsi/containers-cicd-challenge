@@ -7,7 +7,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app
 RUN LS
-COPY .env ./
+#COPY .env ./
 
 
 ENV PYTHONUNBUFFERED=1
