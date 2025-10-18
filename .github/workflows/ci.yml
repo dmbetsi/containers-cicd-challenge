@@ -36,7 +36,7 @@ jobs:
 
       - name: Build and run with docker-compose
         run: |
-          docker compose -f docker/docker-compose.yml up --build -d 
+          docker compose -f docker/docker-compose.yml up --build -d .. 
           # Wait for the app to say healthy test
           sleep 8
           curl --fail http://localhost:8000/health
