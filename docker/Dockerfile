@@ -1,13 +1,13 @@
 FROM python:3.10-slim
 WORKDIR /app
 
+COPY requirements.txt /app
 
+RUN pip install --no-cache-dir -r requirements.txt
 
-#RUN pip install --no-cache-dir -r requirements.txt
-
+COPY app/ /app
 COPY .env /app
-RUN ls
-#COPY .env ./
+
 
 
 ENV PYTHONUNBUFFERED=1
