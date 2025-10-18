@@ -1,9 +1,9 @@
 FROM python:3.10-slim
-WORKDIR /app
+WORKDIR /web_app
 
-COPY app/ /app
+COPY app /web_app
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r app/requirements.txt
 
 COPY .env /app
 
