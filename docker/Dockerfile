@@ -1,11 +1,11 @@
 FROM python:3.10-slim
 WORKDIR /web_app
-
-COPY app /web_app
+RUN mkdir app
+COPY app/ /web_app/app
 
 RUN pip install --no-cache-dir -r app/requirements.txt
 
-COPY .env /app
+COPY .env /web_app/app
 
 
 
