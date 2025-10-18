@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
@@ -39,11 +39,10 @@ jobs:
           docker compose -f docker/docker-compose.yml up --build -d  
           # Wait for the app to say healthy test
           sleep 8
-          docker ps -a
-          docker logs docker-web-1
-          sleep 20
-          curl http://localhost:8000
-         #curl --fail http://localhost:8000/health
+          # docker ps -a
+          # docker logs docker-web-1
+          # sleep 20
+          curl --fail http://localhost:8000/health
       - name: Tear down
         if: always()
         run: docker compose -f docker/docker-compose.yml down -v
