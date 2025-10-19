@@ -3,8 +3,8 @@ on:
     branches: [dev]
   pull_request:
     branches: [main]
-  #workflow_dispatch:
-    #branches: [dev]
+  workflow_dispatch:
+
 jobs:
   test:
     runs-on: ubuntu-latest
