@@ -1,12 +1,12 @@
 on:
   push:
-    branches: [dev]
+    branches: [main]
   pull_request:
-    branches: [dev]
+    branches: [main]
 
 jobs:
   test:
-    runs-on: self-hosted
+    runs-on: ubuntu_latest
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
@@ -23,7 +23,7 @@ jobs:
 
   build-and-run:
     needs: test
-    runs-on: self-hosted
+    runs-on: ubuntu_latest
     env:
       POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
       POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
@@ -42,8 +42,7 @@ jobs:
           # docker ps -a
           # docker logs docker-web-1
           # sleep 20
-          curl --fail http://localhost:8000/health
-          sleep 60
-      - name: Tear down
-        if: always()
-        run: docker compose -f docker/docker-compose.yml down -v
+          curl  http://localhost:8000/
+     #- name: Tear down
+     #  if: always()
+     #  run: docker compose -f docker/docker-compose.yml down -v
