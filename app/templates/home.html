@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Accueil</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h2>Page d'accueil</h2>
+  {% if message %}
+  <p>{{ message }}</p>
+  {% endif %}
+  {% if token %}
+  <p>Votre jeton d'accès : <code>{{ token }}</code></p>
+  {% endif %}
+  <a href="/login">Se déconnecter</a>
+</body>
+</html>

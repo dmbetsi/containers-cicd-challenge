@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Créer un compte</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h2>Inscription</h2>
+  {% if error %}
+  <p class="error">{{ error }}</p>
+  {% endif %}
+  <form method="post" action="/signup">
+    <label>Email :</label>
+    <input type="email" name="email" required>
+    <label>Mot de passe :</label>
+    <input type="password" name="password" required>
+    <button type="submit">S'inscrire</button>
+  </form>
+  <p>Déjà un compte ? <a href="/login">Se connecter</a></p>
+</body>
+</html>
