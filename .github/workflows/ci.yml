@@ -1,3 +1,4 @@
+name: Containers Pipeline
 on:
   push:
     branches: [dev]
