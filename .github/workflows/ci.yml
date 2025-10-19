@@ -7,7 +7,7 @@ on:
     #branches: [dev]
 jobs:
   test:
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
@@ -24,7 +24,7 @@ jobs:
 
   build-and-run:
     needs: test
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     env:
       POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
       POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
